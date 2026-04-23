@@ -8,6 +8,12 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const tabBar = components.tabBar;
 
+type TabItem = (typeof tabs)[number];
+type TabIconProps = {
+    focused: boolean;
+    icon: TabItem["icon"];
+};
+
 {/* Tab Icon */}
 const TabIcon = ({ focused, icon }: TabIconProps) => {
     return (
