@@ -3,32 +3,21 @@ import { tabs } from "@/constants/data";
 import { View } from "react-native";
 import  { colors, components  } from "@/constants/theme";
 import clsx from "clsx";
-import { Image } from "expo-image";
+import { Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 
 const tabBar = components.tabBar;
 
-type TabItem = (typeof tabs)[number];
-type TabIconProps = {
-    focused: boolean;
-    icon: TabItem["icon"];
-};
-
-{/* Tab Icon */}
 const TabIcon = ({ focused, icon }: TabIconProps) => {
     return (
         <View className="tabs-icon">
             <View className={clsx('tabs-pill', focused && 'tabs-active')}>
-                <Image 
-                    source={ icon } 
-                    className="tabs-glyph"
-                />
+                <Image source={ icon }  resizeMode="contain" className="tabs-glyph" />
             </View>
         </View>
     );
 };
-
-{/* Tab Layout */}
 const TabLayout = () => {
     const insets = useSafeAreaInsets();
 
@@ -55,7 +44,6 @@ const TabLayout = () => {
                     height: tabBar.iconFrame,
                     alignItems: 'center',
                 }
-
             }}
         >
             {tabs.map(( tab ) => (
