@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from "expo-font";
 import '@/global.css'
-6
+
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     'sans-regular': require('../assets/fonts/PlusJakartaSans-Regular.ttf'),
